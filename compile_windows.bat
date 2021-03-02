@@ -13,8 +13,8 @@ copy Netica_API_504_windows\lib\Netica.dll
 COPY Netica_API_504_windows\NeticaPy.pyx
 echo compiling cython to c
 cython -a NeticaPy.pyx
-"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\bin\Hostx64\x64\cl.exe"  /nologo /LD /W4  /INetica_API_504_windows\src\ /IC:\Anaconda3\include  /IC:\Anaconda3\PC /FeNeticaPy.pyd  /TcNeticaPy.c    /link Netica_API_504_windows\lib\NeticaEx  /link Netica_API_504_windows\lib\Netica.lib /dll  /libpath:C:\Anaconda3\libs 
-"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\bin\Hostx64\x64\cl.exe" /LD /W4   /D_USRDLL /D_WINDLL  /INetica_API_504_windows\src\ /IC:\Anaconda3\include  /IC:\Anaconda3\PC  /TcNeticaPy.c    /link Netica_API_504_windows\lib\NeticaEx  /link Netica_API_504_windows\lib\Netica.lib   /dll /libpath:C:\Anaconda3\libs /OUT:NeticaPy.dll
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\bin\Hostx64\x64\cl.exe"  /nologo /LD /W4  /INetica_API_504_windows\src\ /IC:\Anaconda3\envs\Netica\include  /IC:\Anaconda3\envs\Netica\PC /FeNeticaPy.pyd  /TcNeticaPy.c /link Netica_API_504_windows\lib\NeticaEx /link Netica_API_504_windows\lib\Netica.lib /dll  /libpath:C:\Anaconda3\envs\Netica\libs 
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\bin\Hostx64\x64\cl.exe" /LD /W4 /D_USRDLL /D_WINDLL /INetica_API_504_windows\src\ /IC:\Anaconda3\envs\Netica\include  /IC:\Anaconda3\envs\Netica\PC  /TcNeticaPy.c  /link Netica_API_504_windows\lib\NeticaEx /link Netica_API_504_windows\lib\Netica.lib   /dll /libpath:C:\Anaconda3\envs\Netica\libs /OUT:NeticaPy.dll
 
 del *.c
 del *.html

@@ -10,10 +10,9 @@ mesg = bytearray()
 env = N.NewNeticaEnviron_ns(b"", None, b"")
 res = N.InitNetica2_bn (env, mesg)
 
-mesg = str(mesg, "utf-8").replace("\n\n", "\n").strip("\n")
-print("\n" + "-"*65)
-print(mesg)
-print("-"*65 + "\n")
+print("\n" + "-" * 65)
+print(mesg.decode("utf-8").replace("\n\n", "\n").strip("\n"))
+print("-" * 65 + "\n")
 
 # initializing the network with environment
 bayesian_network = N.NewNet_bn (b"Animals", env)
@@ -87,7 +86,9 @@ N.SetNodeFuncState (BodyCovering,2, b'reptile')
 
 
 # print the error message in case of any errors within Netica
-print(N.ErrorMessage_ns(N.GetError_ns(N, 5, 0)).decode("utf-8"))
+err_mesg = str(N.ErrorMessage_ns(N.GetError_ns(N, 5, 0)), "utf-8")
+if err_mesg:
+    print("Error within Netica: ", err_mesg)
 
 # compile the final network
 N.CompileNet_bn (bayesian_network)            
@@ -106,6 +107,6 @@ print("The probability of being turtle when its WarmBlooded {:#.4f}".format(beli
 N.DeleteNet_bn (bayesian_network)
 res = N.CloseNetica_bn (env, mesg)
 
-print("\n" + "-"*65)
-print(mesg)
-print("-"*65 + "\n")
+print("\n" + "-" * 65)
+print(mesg.decode("utf-8"))
+print("-" * 65 + "\n")

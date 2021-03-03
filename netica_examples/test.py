@@ -6,10 +6,9 @@ env = N.NewNeticaEnviron_ns(b"",None,b"")
 #env = N.NewNeticaEnviron_ns ("",None,"");
 res = N.InitNetica2_bn (env, mesg)
 
-mesg = str(mesg, "utf-8").replace("\n\n", "\n").strip("\n")
-print("\n" + "-"*65)
-print(mesg)
-print("-"*65 + "\n")
+print("\n" + "-" * 65)
+print(mesg.decode("utf-8").replace("\n\n", "\n").strip("\n"))
+print("-" * 65 + "\n")
 	
 net = N.NewNet_bn (b"ChestClinic", env)
 
@@ -86,7 +85,7 @@ print("Given abnormal X-ray, Asia visit, and lung cancer, the probability of tub
 N.DeleteNet_bn (net)
 res = N.CloseNetica_bn (env, mesg)
 
-print("\n" + "-"*65)
-print(mesg)
-print("-"*65 + "\n")
+print("\n" + "-" * 65)
+print(mesg.decode("utf-8"))
+print("-" * 65 + "\n")
 

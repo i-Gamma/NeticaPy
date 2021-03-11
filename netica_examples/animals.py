@@ -53,20 +53,11 @@ N.SetNodeFuncState (HasShell, 1, b'platypus')
 N.SetNodeFuncState (HasShell, 1, b'robin')
 N.SetNodeFuncState (HasShell, 0, b'turtle')
 
-
-N.SetNodeProbs (Environment, b'monkey',0,1,0)
-N.SetNodeProbs (Environment, b'penguin',0, 0.5,0.5)
-N.SetNodeProbs (Environment, b'platypus',0,0,1)
-N.SetNodeProbs (Environment, b'robin',0.5,0.5,0)
-N.SetNodeProbs (Environment, b'turtle',0,0.5,0.5)
-
-
 N.SetNodeFuncState (BearsYoung,0, b'monkey')
 N.SetNodeFuncState (BearsYoung,1, b'penguin')
 N.SetNodeFuncState (BearsYoung,1, b'platypus')
 N.SetNodeFuncState (BearsYoung,1, b'robin')
 N.SetNodeFuncState (BearsYoung,1, b'turtle')
-
 
 N.SetNodeFuncState (Class,1, b'monkey')
 N.SetNodeFuncState (Class,0, b'penguin')
@@ -74,15 +65,20 @@ N.SetNodeFuncState (Class,1, b'platypus')
 N.SetNodeFuncState (Class,0, b'robin')
 N.SetNodeFuncState (Class,2, b'turtle')
 
-
 N.SetNodeFuncState (WarmBlooded,0, b'bird')
 N.SetNodeFuncState (WarmBlooded,0, b'mammal')
 N.SetNodeFuncState (WarmBlooded,1, b'reptile')
 
-
 N.SetNodeFuncState (BodyCovering,1, b'bird')
 N.SetNodeFuncState (BodyCovering,0, b'mammal')
 N.SetNodeFuncState (BodyCovering,2, b'reptile')
+
+N.SetNodeProbs (Environment, b'monkey', 0, 1, 0)
+N.SetNodeProbs (Environment, b'penguin', 0, 0.5, 0.5)
+N.SetNodeProbs (Environment, b'platypus',0, 0, 1)
+N.SetNodeProbs (Environment, b'robin', 0.5, 0.5, 0)
+N.SetNodeProbs (Environment, b'turtle', 0, 0.5, 0.5)
+
 
 
 # print the error message in case of any errors within Netica

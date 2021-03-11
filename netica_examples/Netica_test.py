@@ -8,6 +8,7 @@ res = N.InitNetica2_bn (env, mesg)
 
 print("\n" + "-" * 65)
 print(mesg.decode("utf-8").replace("\n\n", "\n").strip("\n"))
+print("Chest Clinic Example - programmatically creating the network")
 print("-" * 65 + "\n")
 	
 net = N.NewNet_bn (b"ChestClinic", env)
@@ -18,7 +19,6 @@ Smoking =      N.NewNode_bn (b"Smoking", 2, net);
 Cancer =       N.NewNode_bn (b"Cancer", 2, net);
 TbOrCa =       N.NewNode_bn (b"TbOrCa", 2, net);
 XRay =         N.NewNode_bn (b"XRay", 2, net);
-
 
 N.SetNodeStateNames_bn (VisitAsia,   b"visit,   no_visit");
 N.SetNodeStateNames_bn (Tuberculosis,b"present, absent");
@@ -38,7 +38,7 @@ N.AddLink_bn (TbOrCa, XRay);
 
 	
 N.SetNodeProbs (VisitAsia, 0.01, 0.99);
-	
+
 N.SetNodeProbs (Tuberculosis, b"visit",    0.05, 0.95);
 N.SetNodeProbs (Tuberculosis, b"no_visit", 0.01, 0.99);
 

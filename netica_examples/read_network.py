@@ -12,10 +12,13 @@ res = N.InitNetica2_bn(env, mesg)
 
 print("\n" + "-" * 65)
 print(mesg.decode("utf-8").replace("\n\n", "\n").strip("\n"))
+print("Chest Clinic Example - reading the network from NETA file")
 print("-" * 65 + "\n")
 
-nombre = N. NewFileStream_ns(b"./ChestClinic/ChestClinic.dne", env)
+nombre = N. NewFileStream_ns(b"./ChestClinic/ChestClinic.neta", env)
 net = N. ReadNet_bn (nombre, 0)
+
+nodes = N.GetNetNodes_bn(net)
 
 N.CompileNet_bn (net)
 
